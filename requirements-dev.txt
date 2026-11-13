@@ -1,0 +1,5 @@
+# Local test dependencies only. The session uses the crewai the image bakes
+# in (no requirements.txt, so nothing is installed at boot); keep this pin in
+# step with templates/crewai/VERSIONS.
+crewai==1.15.11
+pytest

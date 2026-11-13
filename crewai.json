@@ -1,0 +1,7 @@
+{
+  "crew": "mutability_crew.crew:crew",
+  "inputs": {
+    "prompt_key": "message",
+    "defaults": {}
+  }
+}

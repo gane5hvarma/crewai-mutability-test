@@ -1,0 +1,27 @@
+# Agent spec for DigitalOcean Managed Agents (flat agents.yaml format).
+#
+#   doctl harness-runtime validate agents.yaml
+#   doctl harness-runtime create agents.yaml --secret HARNESS_INFERENCE_API_KEY=@$HOME/.inference_key
+
+name: crewai-mutability-test     # session names are unique per team
+agent: crewai
+template: crewai
+size: mars-2vcpu-4gb
+
+crewai:
+  framework:
+    repo: https://github.com/gane5hvarma/crewai-mutability-test.git
+    repo_sha: "0000000000000000000000000000000000000000"        # a pushed commit that has crewai.json
+
+# The platform sets HARNESS_INFERENCE_BASE_URL. Without a model the crew
+# answers deterministically, which is enough for the env and tools tests.
+env:
+  HARNESS_INFERENCE_MODEL: kimi-k3
+secrets:
+  HARNESS_INFERENCE_API_KEY:
+    source: tenantSecret
+
+# Optional: attach the Action Gateway for the /tools test. Change the
+# selection on the running session with a PATCH to test a live tools update.
+# tools:
+#   - do.actions: [web_search]
