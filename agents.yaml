@@ -11,7 +11,7 @@ size: mars-2vcpu-4gb
 crewai:
   framework:
     repo: https://github.com/gane5hvarma/crewai-mutability-test.git
-    repo_sha: "0000000000000000000000000000000000000000"        # a pushed commit that has crewai.json
+    repo_sha: "d9e2b9a61d38d4d879ef0bdf4606167d2864adeb"        # a pushed commit that has crewai.json
 
 # The platform sets HARNESS_INFERENCE_BASE_URL. Without a model the crew
 # answers deterministically, which is enough for the env and tools tests.
